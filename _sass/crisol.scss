@@ -1,0 +1,439 @@
+// ============================================
+// CRISOL — Tema Editorial
+// ============================================
+
+// --- Variables ---
+$color-bg:           #F7F3EE;
+$color-text:         #1C1C1C;
+$color-accent:       #B5651D;
+$color-muted:        #6B6B6B;
+$color-border:       #D4C5B5;
+$color-apendice-bg:  #F0EAE0;
+
+$font-heading: 'Cormorant Garamond', Georgia, serif;
+$font-body:    'Lora', Georgia, serif;
+
+$content-width:  700px;
+$padding-h:      2rem;
+
+// --- Reset ---
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// --- Base ---
+html {
+  font-size: 18px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: $color-bg;
+  color: $color-text;
+  font-family: $font-body;
+  font-weight: 400;
+  line-height: 1.85;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+// --- Tipografía ---
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-heading;
+  line-height: 1.2;
+  color: $color-text;
+}
+
+h1 { font-size: 2.6rem; font-weight: 700; }
+h2 { font-size: 1.8rem; font-weight: 600; margin: 2.5rem 0 0.75rem; }
+h3 { font-size: 1.35rem; font-weight: 600; margin: 2rem 0 0.5rem; }
+
+p { margin-bottom: 1.5em; }
+
+a {
+  color: $color-accent;
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+  &:hover { opacity: 0.75; }
+}
+
+blockquote {
+  border-left: 2px solid $color-accent;
+  margin: 2rem 0;
+  padding: 0.25rem 0 0.25rem 1.75rem;
+  font-style: italic;
+  color: $color-muted;
+  font-size: 1.05rem;
+
+  p:last-child { margin-bottom: 0; }
+}
+
+em { font-style: italic; }
+strong { font-weight: 700; }
+
+ul, ol {
+  margin-bottom: 1.5em;
+  padding-left: 1.75rem;
+  li { margin-bottom: 0.4em; }
+}
+
+code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.82em;
+  background: darken($color-bg, 4%);
+  padding: 0.15em 0.45em;
+  border-radius: 2px;
+}
+
+pre {
+  background: darken($color-bg, 4%);
+  padding: 1.5rem;
+  overflow-x: auto;
+  border-radius: 3px;
+  margin-bottom: 1.5em;
+  line-height: 1.6;
+  code {
+    background: none;
+    padding: 0;
+    font-size: 0.85em;
+  }
+}
+
+hr {
+  border: none;
+  border-top: 1px solid $color-border;
+  margin: 3rem auto;
+  width: 35%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2rem auto;
+}
+
+// --- Wrapper ---
+.wrapper {
+  max-width: $content-width;
+  margin: 0 auto;
+  padding: 0 $padding-h;
+  width: 100%;
+}
+
+// --- Header ---
+.site-header {
+  padding: 2rem 0;
+  border-bottom: 1px solid $color-border;
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+  }
+}
+
+.site-title {
+  font-family: $font-heading;
+  font-size: 1.55rem;
+  font-weight: 600;
+  color: $color-text;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+
+  &:hover { opacity: 1; color: $color-accent; }
+}
+
+.site-nav {
+  display: flex;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+
+  a {
+    font-family: $font-heading;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: $color-muted;
+
+    &:hover { color: $color-accent; opacity: 1; }
+  }
+}
+
+// --- Contenido principal ---
+.page-content {
+  flex: 1;
+  padding: 4rem 0 5rem;
+}
+
+// --- Home ---
+.home {
+  max-width: $content-width;
+  margin: 0 auto;
+  padding: 0 $padding-h;
+}
+
+.home-intro {
+  margin-bottom: 3.5rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid $color-border;
+
+  p {
+    font-size: 1.1rem;
+    color: $color-muted;
+    font-style: italic;
+    margin-bottom: 0;
+  }
+}
+
+.post-list-heading {
+  font-family: $font-heading;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: $color-muted;
+  margin-bottom: 2rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid $color-border;
+}
+
+.post-list {
+  list-style: none;
+
+  li {
+    padding: 2rem 0;
+    border-bottom: 1px solid $color-border;
+  }
+}
+
+.post-list-meta {
+  font-family: $font-heading;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  color: $color-muted;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.post-meta-divider { color: $color-border; }
+
+.post-link {
+  display: block;
+  font-family: $font-heading;
+  font-size: 1.55rem;
+  font-weight: 600;
+  color: $color-text;
+  line-height: 1.25;
+
+  &:hover { color: $color-accent; opacity: 1; }
+}
+
+.post-excerpt {
+  margin-top: 0.6rem;
+  color: $color-muted;
+  font-size: 0.92rem;
+  line-height: 1.75;
+}
+
+.pager {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2.5rem;
+}
+
+.pager-link {
+  font-family: $font-heading;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: $color-muted;
+
+  &:hover { color: $color-accent; opacity: 1; }
+}
+
+// --- Post ---
+.post {
+  max-width: $content-width;
+  margin: 0 auto;
+  padding: 0 $padding-h;
+}
+
+.post-header {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid $color-border;
+}
+
+.post-title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.01em;
+}
+
+.post-meta {
+  font-family: $font-heading;
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+  color: $color-muted;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.post-content {
+  font-size: 1rem;
+  line-height: 1.9;
+
+  > p:first-child::first-letter {
+    font-family: $font-heading;
+    font-size: 4rem;
+    font-weight: 700;
+    float: left;
+    line-height: 0.75;
+    margin: 0.1em 0.1em 0 0;
+    color: $color-accent;
+  }
+}
+
+// --- Page ---
+.page {
+  max-width: $content-width;
+  margin: 0 auto;
+  padding: 0 $padding-h;
+}
+
+.page-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid $color-border;
+}
+
+.page-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  font-style: italic;
+}
+
+// --- Apéndice de Metamorfosis ---
+.apendice {
+  margin-top: 5rem;
+
+  &__divider {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+
+    &::before, &::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: $color-border;
+    }
+  }
+
+  &__divider-symbol {
+    font-family: $font-heading;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: $color-accent;
+    white-space: nowrap;
+  }
+
+  &__body {
+    background: $color-apendice-bg;
+    padding: 2.75rem 3rem;
+    border-radius: 2px;
+  }
+
+  &__section {
+    margin-bottom: 2.25rem;
+    &:last-child { margin-bottom: 0; }
+  }
+
+  &__label {
+    display: block;
+    font-family: $font-heading;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: $color-accent;
+    margin-bottom: 0.85rem;
+  }
+
+  &__text {
+    font-size: 0.88rem;
+    color: $color-muted;
+    line-height: 1.9;
+    margin: 0;
+
+    &--original {
+      font-style: italic;
+    }
+  }
+
+  &__separator {
+    width: 2.5rem;
+    height: 1px;
+    background: $color-border;
+    margin: 2.25rem 0;
+  }
+}
+
+// --- Footer ---
+.site-footer {
+  border-top: 1px solid $color-border;
+  padding: 1.75rem 0;
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}
+
+.footer-text {
+  font-family: $font-heading;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: $color-muted;
+}
+
+// --- Responsive ---
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+
+  .site-header .wrapper {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .site-nav { gap: 1.25rem; }
+
+  .post-title { font-size: 2rem; }
+
+  .apendice__body {
+    padding: 1.75rem;
+  }
+
+  .post-content > p:first-child::first-letter {
+    font-size: 3.2rem;
+  }
+}

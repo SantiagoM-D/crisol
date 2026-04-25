@@ -1,8 +1,17 @@
 # Site-wide settings
-# ------------------
 title: Crisol
+description: >
+  Laboratorio de ideas. Alquimia intelectual donde el pensamiento personal
+  se somete al rigor de la evidencia empírica y el contraste bibliográfico.
 url: "https://crisol.blog"
 baseurl: ""
+
+author:
+  name: Santiago Montenegro
+
+date_format: "%d %b %Y"
+
+show_excerpts: true
 
 plugins:
   - jekyll-feed
