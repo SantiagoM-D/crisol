@@ -1,5 +1,8 @@
 # Site-wide settings
 # ------------------
+title: Crisol
+url: "https://crisol.blog"
+baseurl: ""
 #
 # title: Your awesome title
 #
